@@ -79,4 +79,14 @@ class PostCodes:
         else:
             return False
 
+    def validate_postcode_components(self, postcode_value):
+        """ Function to validate the Postcode and return
+            the different components of Postcode, i.e.,
+            Postcode Area, Postcode District,Postcode Sector,
+            Postcode Unit
+            return True if the Postcode is valid
+            else return False
+        """
+
+
 
