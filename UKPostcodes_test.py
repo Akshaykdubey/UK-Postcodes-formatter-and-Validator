@@ -8,26 +8,31 @@
 #            3) test_format_postcode3 : 'Unit test to test formatting of the Postcode
 #                                        Checks for length of Postcode and throws an exception
 #                                        if the the length doesn't lie between 6 and 8'
-#            3) test_validate_component_postcode1 : 'Unit test to validate the different
+#            4) test_validate_component_postcode1 : 'Unit test to validate the different
 #                                        components of the Postcode. Positive case
 #                                        Double Digit District'
-#            4) test_validate_component_postcode2 : 'Unit test to validate the different
+#            5) test_validate_component_postcode2 : 'Unit test to validate the different
 #                                        components of the Postcode. Positive case
 #                                        Single Digit District'
-#            5) test_validate_postcode1 : ''
-#
-#
-#
-#
-#
-#
-
+#            6) test_validate_postcode1 : 'Unit test for validating the Postcode. Positive case'
+#            7) test_validate_postcode2 : 'Unit test for validating the Postcode. Negative case
+#                                          The letters QVX are not used in the first position'
+#            8) test_validate_postcode3 : 'Unit test for validating the Postcode. Negative case
+#                                          Only letters to appear in the third position are ABCDEFGHJKPSTUW'
+#            9) test_validate_postcode4 : 'Unit test for validating the Postcode. Negative case
+#                                          Only letters to appear in the fourth position are ABEHMNPRVWXY'
+#            10) test_validate_postcode5 : 'Unit test for validating the Postcode. Negative case
+#                                          The letters IJZ are not used in the second position'
+#            11) test_validate_postcode6 : 'Unit test for validating the Postcode. Negative case
+#                                          The final two letters do not use the letters CIKMOV'
+# @author: Akshay Dubey
+##################################################################
 
 import unittest
 from UKPostcodes import PostCodes
 
 
-class TestPrintNumbers(unittest.TestCase):
+class TestPostCodes(unittest.TestCase):
 
     def test_format_postcode1(self):
         """ Unit test to test formatting of the Postcode
@@ -153,8 +158,6 @@ class TestPrintNumbers(unittest.TestCase):
         num = postcode_inst.validate_postcode('PO167GV')
         assert num == False
         print('Test11: Successful')
-
-
 
 
 if __name__ == '__main__':
