@@ -31,7 +31,6 @@
 #                     Step 2: Call the method validate_postcode_components
 #                     inst.validate_postcode_components('PO167GZ')
 #               @returns: self object containing components of Postcode
-#               @output:
 # @author: Akshay Dubey
 ###########################################################################
 
@@ -66,13 +65,13 @@ INVALID_OUT_CODE = ['E1', 'N1', 'NW1', 'SE1', 'EC50']
 class PostCodes:
 
     def __init__(self, input_code,
-                 formatted_postcode = '',
-                 outward_code = '',
-                 inward_code = '',
-                 postcode_area = '',
-                 postcode_district = '',
-                 postcode_unit = '',
-                 postcode_sector = ''):
+                 formatted_postcode='',
+                 outward_code='',
+                 inward_code='',
+                 postcode_area='',
+                 postcode_district='',
+                 postcode_unit='',
+                 postcode_sector=''):
         self.input_code = input_code
         self.formatted_postcode = formatted_postcode
         self.outward_code = outward_code
@@ -140,10 +139,10 @@ class PostCodes:
             index_digit = re.search("\d", self.outward_code).start()
 
             # Fetching Postcode area from the outward code
-            self.postcode_area = index_digit[:index_digit]
+            self.postcode_area = self.outward_code[:index_digit]
 
             # Fetching Postcode district from the outward code
-            self.postcode_district = index_digit[:index_digit]
+            self.postcode_district = self.outward_code[index_digit:]
 
             # Checking conditions on postcode_area
             if self.outward_code.startswith(tuple(INVALID_OUT_CODE)):
