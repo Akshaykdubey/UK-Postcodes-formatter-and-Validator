@@ -36,6 +36,11 @@ class TestPrintNumbers(unittest.TestCase):
                   "Postcode contains special character.\n"\
                   "Test2: Successful")
 
+    def test_validate_component_postcode1(self):
+        postcode_inst = PostCodes(10)
+        num = postcode_inst.validate_postcode_components('PO167GZ')
+        print(num.postcode_area, num.postcode_sector, num.postcode_unit, num.postcode_district)
+
     def test_validate_postcode1(self):
         """ Unit test for validating of the Postcode
             Positive case
@@ -47,10 +52,7 @@ class TestPrintNumbers(unittest.TestCase):
         print('Test3: Successful')
 
 
-    # def test_format_postcode1(self):
-    #     postcode_inst = PostCodes(10)
-    #     num = postcode_inst.format_postcode('weq1212')
-    #     print(num)
+
 
 if __name__ == '__main__':
     unittest.main()
